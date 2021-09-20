@@ -1,0 +1,81 @@
+.btn-container {
+    border-radius: 3px;
+    border: 0;
+    text-decoration: none;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+    color: #ffffff;
+    display: flex;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 0 0;
+    padding: 0;
+    white-space: nowrap;
+    min-width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+        background-color: lighten(rgba(255, 255, 255, 0.377), 20);
+    }
+    &:active {
+        background-color: lighten(rgba(255, 255, 255, 0.6), 50);
+    }
+}
+
+.material-icons {
+    font-size: 20px;
+}
+
+.avatar:hover {
+    cursor: pointer;
+}
+
+.sortable-ghost {
+    border: 3px dashed grey;
+    font-size: 0;
+    overflow: hidden;
+}
+.ghost-card {
+    border: 3px dashed grey;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.drag-preview {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%) rotate(7deg) translateY(55%);
+}
+
+.compose-btn {
+    background-color: #0079bf;
+    padding: 4px 12px;
+    border-radius: 3px;
+    color: #ffffff;
+    height: 32px;
+    transition: margin 85ms ease-in, height 85ms ease-in;
+
+    margin: 0px 9.5px 0 0.5px;
+    transition: background-color 0.3s;
+    &:disabled {
+        background-color: #97d5f8;
+        &:hover {
+            background-color: #97d5f8;
+            cursor: not-allowed;
+        }
+    }
+    &:hover {
+        background-color: darken(#0079bf, 5);
+    }
+}
+
+.hover-background {
+    &:hover {
+        // opacity: .8 ;
+        // background-color: lightgray;
+    }
+}

@@ -1,0 +1,279 @@
+@keyframes openLabelTitle {
+    0% {
+        width: 40px;
+        max-width: fit-content;
+        height: 8px;
+        color: #ffffff00;
+    }
+    15% {
+        max-width: fit-content;
+        width: 100%;
+        height: 8px;
+        color: #ffffff00;
+    }
+    35% {
+        max-width: fit-content;
+        width: 100%;
+        height: 8px;
+    }
+    95% {
+        color: #ffffffd8;
+    }
+    100% {
+        color: #ffffff;
+        height: 16px;
+    }
+}
+
+@keyframes closeLabelTitle {
+    0% {
+        height: 16px;
+    }
+    65% {
+        width: 40px;
+        height: 8px;
+    }
+}
+.card-preview {
+    overflow: hidden;
+    background-color: #ffffff;
+    margin: 0 4px;
+    border-radius: 3px;
+    color: #54637c;
+    // min-height: 60px;
+    min-height: 32px;
+    transition: background-color 0.1s;
+    box-shadow: 0 1px 0 #c0c6d0;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(244, 245, 247);
+        .cover-full .edit-btn,
+        .cover-half .edit-btn,
+        .main-preview .edit-btn {
+            display: flex;
+        }
+    }
+    .cover-full,
+    .cover-half,
+    .main-preview {
+        position: relative;
+        .edit-btn {
+            position: absolute;
+            z-index: 1;
+            right: 2px;
+            top: 2px;
+            display: none;
+            border-radius: 3px;
+            width: 28px;
+            height: 28px;
+            &.is-cover {
+                background-color: rgba(221, 221, 221, 0.74);
+                top: 2px;
+                &:hover {
+                    background-color: rgb(236, 236, 236);
+                }
+            }
+            &.is-img-no-cover {
+                background-color: rgba(221, 221, 221, 0.74);
+                right: 11px;
+                top: 8px;
+                &:hover {
+                    background-color: rgb(236, 236, 236);
+                }
+            }
+            .icon {
+                font-size: 1rem;
+                color: gray;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-40%, -50%);
+            }
+            &:hover {
+                background-color: rgba(223, 223, 223, 0.822);
+            }
+        }
+    }
+    .cover-half {
+        height: 32px;
+    }
+    .cover-full {
+        min-height: 56px;
+        font-size: 16px;
+        max-height: unset;
+        display: flex;
+        align-items: flex-end;
+        .card-preview-title {
+            word-wrap: break-word;
+            color: #172b4d;
+            font-weight: 600;
+            padding: 10px 8px;
+        }
+    }
+    .main-preview {
+        // padding: 6px 8px 2px;
+        padding: 5.6px 8px 2px;
+        min-height: 32px;
+        color: #172b4d;
+        .card-preview-title {
+            min-height: 20px;
+            margin-bottom: 4px;
+        }
+        .card-labels {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0px 0 4px 0;
+            row-gap: 4px;
+            // &:focus-within {
+            // .label-review.title-shown {
+            // margin: 2.8px 0 0 0;
+            // }
+            // }
+            .label-preview {
+                padding: 3px;
+                border-radius: 3px;
+                min-width: 40px;
+                height: 8px;
+                color: #ffffff;
+                font-weight: 600;
+                font-size: 12px;
+                display: inline-block;
+                margin: 0 4px 0 0;
+                transition: color 1s;
+                overflow-y: clip;
+                animation: closeLabelTitle 0.85s;
+
+                &.title-shown {
+                    animation: openLabelTitle 0.85s;
+                    height: 16px;
+                    padding: 0 8px;
+                    align-items: center;
+                    max-width: 198px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    // margin-bottom: 4px;
+                    line-height: 1.25;
+                }
+                // &:not(.title-shown) {
+                //     animation-name: openLabelTitle;
+                //     animation-duration: 0.85s;
+                // }
+                &:hover {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+            }
+        }
+        .img-preview {
+            width: 100%;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+        .card-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            // row-gap: 2px;    
+            margin-top: 2px;
+            .card-badges {
+                flex-grow: 1;
+                display: flex;
+                gap: 13px;
+                margin-top: 3px;
+                // margin-top: 4px;
+                & > * {
+                    font-size: 12px;
+                }
+                .badge-icon {
+                    font-size: 14px;
+                    // padding:2px;
+                    // font-weight: 600;
+                }
+
+                .notifications-badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    background-color: #eb5a46;
+                    border-radius: 3px;
+                    margin: 0 0 4px;
+                    padding: 2px 6px;
+                    color: #ffffff;
+                }
+
+                .date-badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                    border-radius: 3px;
+                    padding: 2px 6px;
+                    color: #ffffff;
+                    // Might be a different way to style the whole badge section, for now its ok.
+                    margin-bottom: 4px;
+                    align-self: flex-start;
+                    background-color: #fc4c4c;
+
+                    &.done {
+                        background-color: #61bd4f;
+                    }
+                }
+
+                .description-badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .badge-icon {
+                        // font-weight: 600;
+                        font-size: 14px;
+                    }
+                }
+
+                .checklist-badge {
+                    // font-size: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                }
+                .attachments-badge {
+                    .badge-icon {
+                        transform: rotate(130deg);
+                        height: 14px;
+                        width: 14px;
+                    }
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 3px;
+                }
+                .comment-badge {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 5px;
+                }
+            }
+            .card-members {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: row-reverse;
+                gap: 4px;
+                margin: 3px -2px 3.5px 0;
+
+                & > * {
+                    // margin-top: 5.25px;
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

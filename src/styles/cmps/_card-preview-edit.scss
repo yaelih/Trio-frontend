@@ -1,0 +1,159 @@
+.card-preview-edit{
+      z-index: 15;
+      position:absolute;
+      display: flex;
+      width: 430px;
+      cursor: auto;
+      .cover{
+         width: 254px;
+         height: 30px;
+         border-top-left-radius: 3px;
+         border-top-right-radius: 3px;
+      }
+      .card-labels{
+         padding-top: 6px;
+         padding-left: 8px;
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         row-gap:3px;
+         background-color: #fff;
+         max-width: 254px;
+         &.no-cover{
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+         }
+         .label-preview{
+            padding: 3px;
+            border-radius: 3px;
+            min-width: 40px;
+            height: 8px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 12px;
+            display: inline-block;
+            margin: 0 4px 0 0;
+            transition: color 1s;
+            overflow-y: clip;
+            &.title-shown{
+               height: 16px;
+               padding: 0 8px;
+               align-items: center;
+               max-width: 198px;
+               white-space: nowrap;
+               text-overflow: ellipsis;
+               margin-bottom: 4px;
+               line-height: 1.25;
+            }
+         }
+      }
+      .main-textarea{
+         width: 254px;
+         padding: 3px 10px;
+         min-height: 80px;
+         font-size: 1rem;
+         resize: none;
+         background-color: #fff;
+         overflow-wrap: break-word;
+         outline: none;
+         &.no-label-and-cover{
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+         }
+      }
+      .info{
+         border-bottom-left-radius: 3px;
+         border-bottom-right-radius: 3px;
+         width: 254px;
+         min-height: 25px;
+         padding-left: 10px;
+         background-color: #fff;
+         .card-badges{
+            display: flex;
+            flex-wrap: wrap;
+            gap:10px;
+            &>*{
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap:3px;
+               &>*{
+                  font-size: 1rem;
+               }
+            }
+            .date-badge {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               cursor: pointer;
+               gap: 5px;
+               border-radius: 3px;
+               padding: 2px 6px;
+               color: #ffffff;
+               margin-bottom: 4px;
+               align-self: flex-start;
+               background-color: #fc4c4c;
+               &.done {
+                  background-color: #61bd4f;
+               }
+            }
+            .attachments-badge{
+               .badge-icon {
+                  transform: rotate(130deg);
+                  height: 14px;
+                  width: 14px;
+               }
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 3px;
+            }
+         }
+         .card-members {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 4px;
+            margin: 0 4.5px 4.5px auto;
+         }
+      }
+      .save{
+         margin-top: 10px;
+         // background-color: darken(#409EFF, 20%);
+         border: darken(#409EFF, 20%);
+         padding: 9px 25px;
+      }
+      nav{
+         button{
+            background-color: rgba(0,0,0,.6);
+            color:#e6e6e6;
+            border-radius: 3px;
+            display: block;
+            height: 30px;
+            margin: 0 0 4px 8px;
+            padding: 6px 12px 6px 8px;
+            transition: transform 85ms ease-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: left;
+            gap:7px;
+            &:hover{
+               transform: translateX(10px);
+               transition: transform 85ms ease-in;
+               background-color: rgba(0, 0, 0, 0.856);
+            }
+            .icon{
+               font-size: 1.1rem;
+            }
+         }
+         @media (max-width:450px) {
+            &{
+               display: none;
+            }            
+         }
+      }
+      .popup-component{
+         top:0;
+         left: 262px;
+      }
+}

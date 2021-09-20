@@ -1,0 +1,99 @@
+.app-header {
+    background-color: #273240b0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #95959b;
+    font-family: Segoe-UI-Bold;
+
+    .material-icons-outlined {
+        font-size: 19px;
+    }
+
+    &.isBoards-page{
+      background-color:#4b5a70;
+   }
+    .nav {
+        display: flex;
+        align-items: center;
+
+        & > button :first-child {
+            padding: 0 8px 0 7.5px;
+        }
+        & > button :last-child {
+            padding: 0 7.5px 0 0;
+            font-size: 14px;
+        }
+
+        .wh {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .boards-icon {
+            transform: rotate(90deg);
+        }
+        // .boards {
+        // transform: rotate(90deg);
+        // }
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        letter-spacing: 0.6px;
+
+        &:hover {
+            color: rgb(206, 200, 200);
+            // color: rgb(212, 204, 204);
+            cursor: pointer;
+        }
+        // transition: rotate 2s;
+
+        .logo-icon {
+            -webkit-transition: -webkit-transform 0.8s ease-in-out;
+            -ms-transition: -ms-transform 0.8s ease-in-out;
+            transition: transform 0.8s ease-in-out;
+            transform: rotate(90deg);
+            font-size: 21px;
+            margin-top: 0.5px;
+            margin-inline-end: unset;
+            font-weight: 600;
+            &:hover {
+                transform: unset;
+            }
+            // Trio
+            span:last-child {
+                padding-top: 0.667px;
+            }
+        }
+    }
+
+    .header-features {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // gap: 10px;
+
+        & > button:first-child {
+            font-weight: 100;
+            font-size: 24px;
+            transition: background-color 0.15s;
+
+            &:hover {
+                background-color: darken(rgba(255, 255, 255, 0.3), 15);
+            }
+        }
+
+        & > .avatar:nth-child(2) {
+            margin-right: 4px;
+        }
+    }
+}
