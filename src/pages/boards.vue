@@ -1,8 +1,8 @@
 <template>
   <section class="boards-page" :class="classToBoardPage">
     <div class="container">
-    <h1 class="title">Choose Your Board</h1>
-      <ul class="boards-list">
+      <h1 class="title">Choose Your Board</h1>
+      <ul v-if="hasBoards" class="boards-list">
         <li class="boards-preview" v-for="board in boards" :key="board._id">
           <section
             class="background"
@@ -13,20 +13,25 @@
             }"
           >
             <div class="title-container">
-            <span class="title-board"> {{ boardTitleToShow(board.title) }} </span>
-            <span class="star material-icons-round" 
-            :class="{'is-stared':board.isStarred}" @click.stop="toggleStartted(board)"
-            >star_outline</span>
-               </div>
+              <span class="title-board">
+                {{ boardTitleToShow(board.title) }}
+              </span>
+              <span
+                class="star material-icons-round"
+                :class="{ 'is-stared': board.isStarred }"
+                @click.stop="toggleStartted(board)"
+                >star_outline</span
+              >
+            </div>
           </section>
         </li>
       </ul>
+      <h3 v-else class="boards-list">You have no boards yet</h3>
     </div>
   </section>
 </template>
 
 <script>
-
 export default {
   async created() {
     if (!this.boards) {
@@ -71,22 +76,28 @@ export default {
         console.log("ERROR cannot add board");
       }
     },
-    async toggleStartted(board){
+    async toggleStartted(board) {
       try {
         board.isStarred = !board.isStarred;
         this.$store.dispatch({ type: "saveBoard", board });
       } catch (err) {
         console.log("ERROR: cannot save board ", err);
       }
-    }
+    },
   },
   computed: {
     boards() {
       return this.$store.getters.boards;
     },
-    classToBoardPage(){
-       return {'isLessThen3Boards':this.boards.length <= 6,'isMoreThen3Boards': this.boards.length > 6}
-    }
+    hasBoards() {
+      return this.$store.getters.boards.length > 0;
+    },
+    classToBoardPage() {
+      return {
+        isLessThen3Boards: this.boards.length <= 6,
+        isMoreThen3Boards: this.boards.length > 6,
+      };
+    },
   },
 };
 </script>

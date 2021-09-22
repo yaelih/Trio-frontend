@@ -5,7 +5,7 @@
    "scripts": {
       "start": "vue-cli-service serve",
       "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build --dest ../Backend/public",
+      "build": "vue-cli-service build --dest ../backend/public",
       "lint": "vue-cli-service lint"
    },
    "dependencies": {

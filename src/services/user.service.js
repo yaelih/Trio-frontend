@@ -117,17 +117,17 @@ async function getMiniUser(userId) {
 async function createDemoUsers() {
    try {
       const usersToAdd = [
-         { fullname: "Guest1438", username: "Guest", email: "ysadasael@aa.com", password: "Guest", imgUrl: "", mentions: [] },
+         // { fullname: "Guest1438", username: "Guest", email: "ysadasael@aa.com", password: "Guest", imgUrl: "", mentions: [] },
          { fullname: "Yael Hazan", username: "yael", email: "yael@aa.com", password: "123123", imgUrl: "https://res.cloudinary.com/or21321/image/upload/v1626387050/vnodxsvuzaeapjkgxw9g.jpg", mentions: [] },
          { fullname: "Dekel Livyani", username: "dekel", email: "dekel@gmail.com", password: "123123", imgUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg2DU9OQ6q9A4Alh_MYjoLzo6awn87MICqq6KenfafYqwT_JnQi3xmnQfRAQFMqFH2TFMjhS6V&usqp=CAc", mentions: [] },
          { fullname: "Or Hadar", username: "or", email: null, password: "123123", imgUrl: "http://res.cloudinary.com/or21321/image/upload/v1626387480/y5ox9qoe0xvuhmsyultn.jpg", mentions: [] },
          { fullname: "Eden Aran", username: "eden", email: "eden@gmail.com", password: "123123", imgUrl: "http://res.cloudinary.com/or21321/image/upload/v1626390579/xedxhssgnjtf68kd4gme.jpg", mentions: [] }
       ]
-      await httpService.post('user', usersToAdd[0])
-      await httpService.post('user', usersToAdd[1])
-      await httpService.post('user', usersToAdd[2])
-      await httpService.post('user', usersToAdd[3])
-      await httpService.post('user', usersToAdd[4])
+      await httpService.post('auth/signup', usersToAdd[0])
+      await httpService.post('auth/signup', usersToAdd[1])
+      await httpService.post('auth/signup', usersToAdd[2])
+      await httpService.post('auth/signup', usersToAdd[3])
+      // await httpService.post('user', usersToAdd[4])
       await httpService.get('user')
 
    } catch (err) {

@@ -43,7 +43,9 @@ export default {
   methods: {
     async signupAndStart() {
       await this.$store.dispatch({ type: "signupAsGuest" });
-      this.$router.push(`/b/${this.$store.getters.boards[0]._id}`);
+      if (this.$store.getters.boards.length > 0) this.$router.push(`/b/${this.$store.getters.boards[0]._id}`)
+      else this.$router.push('/b');
+      // this.$router.push(`/b/${this.$store.getters.boards[0]._id}`);
     },
   },
 };
