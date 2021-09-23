@@ -115,7 +115,7 @@ export default {
       return { selected: this.board.isStarred };
     },
     users() {
-      return this.$store.getters.users;
+      return this.$store.getters.users.filter(user => user.fullname !== "Guest")
     },
     boardTitle() {
       return JSON.parse(JSON.stringify(this.board.title));
